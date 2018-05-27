@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div style="text-align:  center;">
+  <h1>Welcome to Hello Rock</h1>
+  <h3>This is a very simple Hello World guide for getting your Rails application running on Kubernetes.</h3>
+</div>
+
+<br>
+<h2>Titles</h2>
+<p>The following table is to show the capability of storing objects in a PostgresDB.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @titles.each do |title| %>
+      <tr>
+        <td><%= title.name %></td>
+        <td><%= link_to 'Show', title %></td>
+        <td><%= link_to 'Edit', edit_title_path(title) %></td>
+        <td><%= link_to 'Destroy', title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Title', new_title_path %>
+
