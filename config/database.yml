@@ -8,18 +8,18 @@ development:
   host: <%= ENV["PGHOST"] %>
   username: <%= ENV["PGUSER"] %>
   password: <%= ENV["PGPASS"] %>
-  database: hellorok_development
+  database: <%= ENV["PGDB"] %>
 
 test:
   <<: *default
   host: <%= ENV["PGHOST"] %>
   username: <%= ENV["PGUSER"] %>
   password: <%= ENV["PGPASS"] %>
-  database: hellorok_test
+  database: <%= ENV["PGDB"] %>
   
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
   username: <%= ENV["PGUSER"] %>
   password: <%= ENV["PGPASS"] %>
-  database: hellorok_production
+  database: <%= ENV["PGDB"] %>

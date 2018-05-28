@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  db:
+    image: postgres
+  app:
+    build: .
+    image: iufuenza/hello-rok:v1
+    command: "bin/bundle exec rails s -p 3000 -b 0.0.0.0"
+    depends_on:
+      - db
+    volumes:
+      - .:/hello-rok
+    ports:
+      - "3000:3000"
